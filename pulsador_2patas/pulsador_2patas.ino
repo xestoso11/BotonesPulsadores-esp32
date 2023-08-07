@@ -16,7 +16,7 @@ void setup() {
 void loop() {
   //leemos el pin en el que está el boton y le asignamos el valor a la variable que creamos al principio
   boton1 = digitalRead(botonPin12);
-  // Éste if nos permite saber cuando se activa el botón, se iguala a 0 cuando se active ya que usamos INPUT_PULLUP al inicial, si usáramos INPUT tendriamos que igualarlo a 1
+  // Éste if nos permite saber cuando se activa el botón, se iguala a 0 ya que usamos INPUT_PULLUP al inicial, si usáramos INPUT tendriamos que igualarlo a 1 para saber cuando se active
   if (boton1 == 0) {
     // Nos indica que el botón se activo por el puerto serial
     Serial.println("boton1 activo");
