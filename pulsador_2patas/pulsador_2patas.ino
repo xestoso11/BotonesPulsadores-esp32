@@ -10,13 +10,13 @@ void setup() {
   // Nos mostrara al leer el puerto serial "Iniciado" cuando arranque nuestra placa
   Serial.println("Iniciado");
   // pinMode indicamos el pin que se va a leer y gracias a INPUT_PULLUP nos permite no tener que usar resistencias para que funcionen los botones, ya que usara la propias resistencias de la placa
-  pinMode(botonPin12, INPUT_PULLUP);
+  pinMode(botonPin12, INPUT_PULLDOWN);
 }
 
 void loop() {
   //leemos el pin en el que está el boton y le asignamos el valor a la variable que creamos al principio
   boton1 = digitalRead(botonPin12);
-  // Éste if nos permite saber cuando se activa el botón, se iguala a 0 ya que usamos INPUT_PULLUP al inicial, si usáramos INPUT tendriamos que igualarlo a 1 para saber cuando se active
+  // Éste if nos permite saber cuando se activa el botón, se iguala a 0 ya que usamos INPUT_PULLUP al inicial, si usáramos INPUT_PULLDOWN o INPUT tendriamos que igualarlo a 1 para saber cuando se active
   if (boton1 == 0) {
     // Nos indica que el botón se activo por el puerto serial
     Serial.println("boton1 activo");
